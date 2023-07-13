@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { WordcloudServiceService } from './services/wordcloud-service.service';
+import { GetImageParams } from './types/get-image-params';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ export class AppComponent {
   title = 'wordcloud-frontend';
   service = inject(WordcloudServiceService);
   imageData: any = null;
-  onTitleChange(data: {"text": string, "fontScale": number}){
+  onTitleChange(data: GetImageParams){
     this.service.getImagewithParams(data).then(data => {console.log(data); this.imageData = data})
   }
 }

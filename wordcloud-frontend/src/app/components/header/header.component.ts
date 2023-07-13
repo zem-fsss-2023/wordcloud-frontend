@@ -13,6 +13,6 @@ export class HeaderComponent {
   onClick(){
     //the function that will send the text to api
     console.log(this.title);
-    this.titleChange.emit({"text":this.title, "fontScale":this.fontScale});
+    this.titleChange.emit({text:this.title, fontScale:this.fontScale});
   }
 }

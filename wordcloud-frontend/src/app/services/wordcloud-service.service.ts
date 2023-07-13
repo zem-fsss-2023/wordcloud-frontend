@@ -1,6 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
+import { GetImageParams } from '../types/get-image-params';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ export class WordcloudServiceService {
     return response;
   }
 
-  async getImagewithParams(data: {"text": string, "fontScale": number}): Promise<any>{
+  async getImagewithParams(data: GetImageParams): Promise<any>{
     const response: any = await firstValueFrom(this.http.post(this.WORDCLOUD_BASE_URL, data, {responseType: 'text'}));
     return response;
   }
