@@ -10,8 +10,7 @@ export class AppComponent {
   title = 'wordcloud-frontend';
   service = inject(WordcloudServiceService);
   imageData: any = null;
-  onTitleChange(title: string){
-    console.log(title);
-    this.service.getImage(title).then(data => {console.log(data); this.imageData = data})
+  onTitleChange(data: {"text": string, "fontScale": number}){
+    this.service.getImagewithParams(data).then(data => {console.log(data); this.imageData = data})
   }
 }
