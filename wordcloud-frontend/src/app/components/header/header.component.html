@@ -1,5 +1,5 @@
 <p>header works!</p>
 <div>
-  <input type="text" name="text">
-  <button>Generate</button>
+  <input [(ngModel)]="title" type="text" name="text">
+  <button (click)="onClick()">Generate</button>
 </div>

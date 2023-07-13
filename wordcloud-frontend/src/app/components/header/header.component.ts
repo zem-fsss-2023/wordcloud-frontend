@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-
+  title: string = "";
+  @Output()
+  titleChange = new EventEmitter<string>()
+  onClick(){
+    //the function that will send the text to api
+    console.log(this.title);
+    this.titleChange.emit(this.title);
+  }
 }
