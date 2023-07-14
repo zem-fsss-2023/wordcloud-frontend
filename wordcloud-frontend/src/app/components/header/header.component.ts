@@ -11,6 +11,8 @@ export class HeaderComponent {
   case_UL: string = "upper";  // "upper";   // upper, lower or none
   minWordLength: number = 3;  // 3;
   rotation: number = 20;  // 20;
+  fontFamily: string = "sans serif";
+  loadGoogleFonts: string = "";
 
   @Output()
   titleChange = new EventEmitter<any>()
@@ -22,7 +24,9 @@ export class HeaderComponent {
       fontScale:this.fontScale,
       case_UL:this.case_UL,
       minWordLength:this.minWordLength,
-      rotation:this.rotation
+      rotation:this.rotation,
+      fontFamily:this.fontFamily,
+      loadGoogleFonts:this.loadGoogleFonts
     });
   }
 }

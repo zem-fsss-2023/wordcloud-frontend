@@ -1,9 +1,38 @@
-<p>header works!</p>
+<div class="row">
+  <h1>WordCloud</h1>
+</div>
+<div class="row">
+  <p>Generate your own wordcloud!</p>
+</div>
+
 <div>
-  <input [(ngModel)]="title" type="text" name="text">
-  <input [(ngModel)]="fontScale" type="text" name="text">
-  <input [(ngModel)]="case_UL" type="text" name="text">
-  <input [(ngModel)]="minWordLength" type="text" name="text">
-  <input [(ngModel)]="rotation" type="text" name="text">
-  <button (click)="onClick()">Generate</button>
+  <div class="row">
+    <label for="text">Choose a word: </label>
+    <input [(ngModel)]="title" type="text" name="text">
+  </div>
+  <div class="flex-container">
+    <label for="fontFamily">Font Family:</label>
+    <select name="fontFamily">
+      <option value="sans serif">sans serif</option>
+      <option value="Roboto">Roboto</option>
+      <option value="Lilita One">Lilita One</option>
+      <option value="Oswald">Oswald</option>
+    </select>
+  </div>
+  <div class="flex-container">
+    <label for="fontScale">Font size: </label>
+    <input [(ngModel)]="fontScale" type="number" name="fontScale">
+    <label for="case_UL">Letter case: (upper/lower)</label>
+    <input [(ngModel)]="case_UL" type="text" name="case_UL">
+  </div>
+  <div class="flex-container">
+    <label for="minWordLength">min Word Length: </label>
+    <input [(ngModel)]="minWordLength" type="number" name="minWordLength">
+
+    <label for="rotation">Rotation: </label>
+    <input [(ngModel)]="rotation" type="number" name="rotation">
+  </div>
+  <div class="row">
+    <button class="button" (click)="onClick()">Generate</button>
+  </div>
 </div>

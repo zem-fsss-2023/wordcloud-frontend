@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+.row{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.flex-container {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+.button {
+  background-color: #ffffff;
+  color: rgb(34, 34, 55);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+.button:hover {
+  background-color: #9c9c9c;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+select{
+  width: 20%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
