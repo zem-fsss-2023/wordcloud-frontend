@@ -26,7 +26,7 @@ export class HeaderComponent {
       minWordLength:this.minWordLength,
       rotation:this.rotation,
       fontFamily:this.fontFamily,
-      loadGoogleFonts:this.loadGoogleFonts
+      loadGoogleFonts:this.fontFamily
     });
   }
 }
