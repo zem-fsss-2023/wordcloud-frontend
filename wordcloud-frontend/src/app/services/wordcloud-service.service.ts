@@ -22,6 +22,7 @@ export class WordcloudServiceService {
   }
 
   async getImagewithParams(data: GetImageParams): Promise<any>{
+    console.log("here!!")
     const response: any = await firstValueFrom(this.http.post(this.WORDCLOUD_BASE_URL, data, {responseType: 'text'}));
     return response;
   }
