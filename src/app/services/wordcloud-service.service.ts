@@ -8,6 +8,7 @@ import { GetImageParams } from '../types/get-image-params';
 })
 export class WordcloudServiceService {
   private http = inject(HttpClient);
+  private WORDCLOUD_API_URL = `https://fsss-wordcloud.azurewebsites.net/api/wikiwords`;
   private WORDCLOUD_BASE_URL = `http://localhost:8080/api/wikiwords`;
   private API_BASE_URL = `http://localhost:8080/api/wiki`;
 
@@ -17,13 +18,13 @@ export class WordcloudServiceService {
     let params = new HttpParams();
     params.append("title", text);
     console.log(params, text)
-    const response: any = await firstValueFrom(this.http.get(this.WORDCLOUD_BASE_URL+"?title="+text, {responseType: 'text'}));
+    const response: any = await firstValueFrom(this.http.get(this.WORDCLOUD_API_URL+"?title="+text, {responseType: 'text'}));
     return response;
   }
 
   async getImagewithParams(data: GetImageParams): Promise<any>{
     console.log("here!!")
-    const response: any = await firstValueFrom(this.http.post(this.WORDCLOUD_BASE_URL, data, {responseType: 'text'}));
+    const response: any = await firstValueFrom(this.http.post(this.WORDCLOUD_API_URL, data, {responseType: 'text'}));
     return response;
   }
 }
